@@ -7,28 +7,23 @@
     android:background="@color/black"
     tools:context=".PlayMusic">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="63dp"
-        android:layout_height="50dp"
-        android:background="#00100C0C"
-        android:text="Back"
-        app:icon="@drawable/arrow_back_black"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/img_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:srcCompat="@drawable/morebutton" />
 
     <TextView
-        android:id="@+id/nameSong_1"
+        android:id="@+id/nameSong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Thích Thì Đến"
         android:textColor="@color/white"
-        android:textSize="50dp"
+        android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -37,7 +32,7 @@
         app:layout_constraintVertical_bias="0.545" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/nameNgheSi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Le Bao Binh"
@@ -63,7 +58,7 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageSong"
         android:layout_width="276dp"
         android:layout_height="273dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -127,5 +122,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/group_2" />
+
+    <ImageView
+        android:id="@+id/img_play_or_pause"
+        android:layout_width="63dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@drawable/outline_play_circle_black_20" />
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/arrow_back_black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

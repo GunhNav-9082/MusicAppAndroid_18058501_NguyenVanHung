@@ -9,15 +9,14 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-import item.Item;
-import item.ItemAdapter;
+import song.Song;
+import song.SongAdapter;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewPhatGanDay;
-    private ItemAdapter itemAdapter;
-
+    private SongAdapter songAdapter;
     private RecyclerView recyclerViewMFU;
 
 
@@ -29,36 +28,46 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPhatGanDay = findViewById(R.id.rcv_phatGanDay);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         recyclerViewPhatGanDay.setLayoutManager(linearLayoutManager);
-        itemAdapter = new ItemAdapter(this);
-        itemAdapter.setData(getItems());
-        recyclerViewPhatGanDay.setAdapter(itemAdapter);
-
+        songAdapter = new SongAdapter(this);
+        songAdapter.setData(getItems());
+        recyclerViewPhatGanDay.setAdapter(songAdapter);
 
         recyclerViewMFU = findViewById(R.id.rcv_MFU);
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         recyclerViewMFU.setLayoutManager(linearLayoutManager1);
-        itemAdapter = new ItemAdapter(this);
-        itemAdapter.setData(getItems1());
-        recyclerViewMFU.setAdapter(itemAdapter);
-
+        songAdapter = new SongAdapter(this);
+        songAdapter.setData(getItems1());
+        recyclerViewMFU.setAdapter(songAdapter);
 
     }
 
 
-    private List<Item> getItems(){
-        List<Item> listItem = new ArrayList<>();
-        listItem.add(new Item(R.drawable.lebaobinh_img,"Thích Thì Đến","Lê Bảo Bình"));
-        listItem.add(new Item(R.drawable.chillies_img,"Chill","By Nguyen Van Hung"));
-        listItem.add(new Item(R.drawable.beiber_img,"STAY","Justin BeiBer"));
-        return listItem;
+    private List<Song> getItems(){
+        List<Song> listSong = new ArrayList<>();
+        listSong.add(new Song("Thích Thì Đến","Lê Bảo Bình",R.drawable.lebaobinh_img,R.raw.thichthiden));
+        listSong.add(new Song("Chill!","By Nguyễn Văn Hùng",R.drawable.chillies_img,R.raw.cuchillthoi));
+        listSong.add(new Song("Stay","Justin Beiber",R.drawable.beiber_img,R.raw.stay));
+        return listSong;
     }
 
-    private List<Item> getItems1(){
-        List<Item> listItem = new ArrayList<>();
-        listItem.add(new Item(R.drawable.jfla_img,"Shape Of You","J.Fla Cover"));
-        listItem.add(new Item(R.drawable.beiber_img,"STAY","Justin BeiBer"));
-        listItem.add(new Item(R.drawable.hoailam_img,"Hoa Nở Không Màu","Hoài Lâm"));
-        return listItem;
+    private List<Song> getItems1(){
+        List<Song> listSong = new ArrayList<>();
+        listSong.add(new Song("Shape Of You","J.Fla",R.drawable.jfla_img,R.raw.shapeofyou));
+        listSong.add(new Song("Stay","Justin Beiber",R.drawable.beiber_img,R.raw.stay));
+        listSong.add(new Song("Hoa Nở Không Màu","Hoài Lâm",R.drawable.hoailam_img,R.raw.hoanokhongmau));
+        listSong.add(new Song("Dark Horse","Katy Perry",R.drawable.katyperry_img,R.raw.darkhorse));
+        listSong.add(new Song("Sài Gòn Đau Lòng Quá","Hứa Kim Tuyền",R.drawable.huakimtuyen_img,R.raw.saigondaulongqua));
+        listSong.add(new Song("Where Do You Go","No Mercy",R.drawable.nomercy_img,R.raw.wheredoyougo));
+        listSong.add(new Song("2000's Song Hit","Mix Song",R.drawable.song2000s_img,R.raw.song2000s));
+        return listSong;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (songAdapter != null){
+            songAdapter.release();
+        }
     }
 
 }

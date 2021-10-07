@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_song"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="220dp">
+
+        <RelativeLayout
+            android:id="@+id/img_dexuat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_tieudeBaiHat"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="119dp"
+                android:layout_marginBottom="36dp"
+                android:padding="6dp"
+                android:text="Thích Thì Đến"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <ImageView
+                android:id="@+id/img_dexuat2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/lebaobinh_img" />
+
+            <TextView
+                android:id="@+id/tv_nghesi"
+                android:layout_width="119dp"
+                android:layout_height="49dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="164dp"
+                android:layout_marginEnd="-2dp"
+                android:padding="6dp"
+                android:text="Le Bao Binh"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
